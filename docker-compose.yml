@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  mailhog:
+    build:
+      context: "./"
+      dockerfile: Dockerfile
+    env_file:
+      - "./.env"
+    container_name: mailhog
+    command: mailhog
+    ports:
+      - 50025:50025
+      - 60025:60025
